@@ -2,6 +2,12 @@ import Link from "next/link";
 import { prisma } from "../db";
 import { redirect } from "next/navigation";
 
+/**
+ * This is an async function that creates a new todo item with a title and sets its completion status
+ * to false using Prisma ORM.
+ * @param {FormData} data - FormData object containing the data submitted from a form. It is used to
+ * extract the value of the "title" field from the form.
+ */
 async function createTodo(data: FormData) {
     "use server";
 
@@ -15,6 +21,10 @@ async function createTodo(data: FormData) {
 }
 
 export default function New(){
+/* This is a React component that renders a form for creating a new todo item. It includes an input
+field for the title of the todo item, a cancel button that links back to the main page, and a create
+button that submits the form and calls the `createTodo` function. The form is styled using Tailwind
+CSS classes. */
     return (
         <>
             <header className="flex justify-between items-center mb-4">
